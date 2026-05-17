@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://creativethinking.pt/sitemap.xml

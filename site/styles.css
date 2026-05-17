@@ -385,6 +385,29 @@
     .contact-card .arrow{display:none}
   }
 
+  /* ===== TRUST STRIP ===== */
+  .trust-strip{padding:80px 0}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .trust-item{
+    background:var(--cream);border:3px solid var(--red);border-radius:28px;
+    padding:32px 28px;box-shadow:6px 6px 0 var(--red);
+    transition:.2s;
+  }
+  .trust-item:hover{transform:rotate(-1deg)}
+  .trust-item .num{font-size:48px;font-weight:800;color:var(--gold);line-height:1}
+  .trust-item h3{font-size:20px;margin:12px 0 10px}
+  .trust-item p{font-size:13px;font-weight:600;text-transform:none;line-height:1.55}
+
+  /* ===== FORM VALIDATION ===== */
+  form.attempted .field input:invalid,
+  form.attempted .field textarea:invalid{
+    background:#fde8e8;
+    border-color:#c0392b;
+    box-shadow:4px 4px 0 #c0392b;
+  }
+  form.attempted .field input:invalid::placeholder,
+  form.attempted .field textarea:invalid::placeholder{opacity:.6}
+
   /* ===== reveal ===== */
   .reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
   .js .reveal{opacity:0;transform:translateY(30px)}
@@ -442,7 +465,7 @@
     .nav-links.open{display:flex}
     .burger{display:flex}
     .nav-cta{display:none}
-    .blob-grid,.tips-grid,.why-grid{grid-template-columns:1fr}
+    .blob-grid,.tips-grid,.why-grid,.trust-grid{grid-template-columns:1fr}
     .about{grid-template-columns:1fr;gap:30px}
     .foot{grid-template-columns:1fr 1fr;gap:30px}
     .hero-shapes{height:240px;gap:8px}
