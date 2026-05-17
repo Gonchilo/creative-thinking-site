@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contacto — Creative Thinking</title>
+<meta name="description" content="Email, WhatsApp, formulário e redes sociais para falares com a Creative Thinking." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" aria-label="Creative Thinking — Início">
+      <svg viewBox="0 0 100 100" width="40" height="40" aria-hidden="true">
+        <path d="M50 10C27.9 10 10 27.9 10 50s17.9 40 40 40c15.5 0 28.5-8.5 35-20L68 60c-4 6-10 10-18 10-11.1 0-20-8.9-20-20s8.9-20 20-20c8 0 14 4 18 10l17-10C98.5 18.5 65.5 10 50 10Z" fill="#4E0000"/>
+        <circle cx="50" cy="50" r="17" fill="#9EB4D3"/>
+        <polygon points="55,38 48,51 53,51 45,62 52,49 47,49" fill="#FFFFFF"/>
+      </svg>
+      <span class="logo-text">
+        <span class="row"><span class="a">Creative</span> <span class="b">Thinking</span></span>
+        <span class="sub">WEB DEVELOPMENT</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+      <a href="servicos.html">Serviços</a>
+      <a href="porque.html">Porquê nós</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="dicas.html">Dicas</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacto.html" class="nav-cta">Vamos falar</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu"><span></span></button>
+  </div>
+</header>
+
+<section class="hero" style="padding:60px 0 30px">
+  <div class="container">
+    <div class="badges"><span class="sticker">Vamos falar</span></div>
+    <h1 style="font-size:clamp(40px,7vw,90px)">Bora <span class="pop">começar</span>?</h1>
+    <p class="lead">Conta-nos a tua ideia. Resposta em 48h, proposta clara e zero compromisso.</p>
+  </div>
+</section>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<section class="section-dark" style="padding:70px 0 50px">
+  <div class="container" style="max-width:980px">
+
+    <div class="contact-top">
+      <a href="mailto:joana@creativethinking.pt" class="contact-card reveal">
+        <div class="arrow">→</div>
+        <div class="icon">@</div>
+        <div class="label">Manda um email</div>
+        <h3>Email</h3>
+        <span class="value">joana@creativethinking.pt</span>
+      </a>
+      <a href="https://wa.me/351913306609" class="contact-card wa reveal" target="_blank" rel="noopener">
+        <div class="arrow">→</div>
+        <div class="icon">W</div>
+        <div class="label">Chat rápido</div>
+        <h3>WhatsApp</h3>
+        <span class="value">+351 913 306 609</span>
+      </a>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="form-head">
+        <span class="sticker gold">Orçamento</span>
+        <h2>Pede o teu orçamento</h2>
+      </div>
+      <p class="form-sub">Preenche em 1 minuto. Voltamos a ti com proposta em 48h.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-name"><span class="dot"></span>Nome</label>
+          <input id="f-name" name="name" type="text" placeholder="O teu nome" required>
+        </div>
+        <div class="field">
+          <label for="f-email"><span class="dot"></span>Email</label>
+          <input id="f-email" name="email" type="email" placeholder="email@exemplo.com" required>
+        </div>
+
+        <div class="field">
+          <label for="f-company"><span class="dot"></span>Empresa <em style="opacity:.5;font-style:normal;font-weight:600">(opcional)</em></label>
+          <input id="f-company" name="company" type="text" placeholder="Nome da empresa">
+        </div>
+        <div class="field">
+          <label for="f-phone"><span class="dot"></span>Telefone <em style="opacity:.5;font-style:normal;font-weight:600">(opcional)</em></label>
+          <input id="f-phone" name="phone" type="tel" placeholder="+351 ...">
+        </div>
+
+        <div class="field full">
+          <label><span class="dot"></span>Tipo de projeto</label>
+          <div class="chips" role="radiogroup" aria-label="Tipo de projeto">
+            <label class="chip"><input type="radio" name="project" value="landing"><span>Landing page</span></label>
+            <label class="chip"><input type="radio" name="project" value="website" checked><span>Website</span></label>
+            <label class="chip"><input type="radio" name="project" value="ecommerce"><span>E-commerce</span></label>
+            <label class="chip"><input type="radio" name="project" value="branding"><span>Branding</span></label>
+            <label class="chip"><input type="radio" name="project" value="outro"><span>Outro</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-budget"><span class="dot"></span>Orçamento</label>
+          <select id="f-budget" name="budget">
+            <option value="">Selecionar...</option>
+            <option value="lt-1k">Até 1.000 €</option>
+            <option value="1-3k">1.000 € – 3.000 €</option>
+            <option value="3-6k">3.000 € – 6.000 €</option>
+            <option value="6-10k">6.000 € – 10.000 €</option>
+            <option value="10k+">10.000 € +</option>
+            <option value="?">Ainda não sei</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-when"><span class="dot"></span>Quando queres começar?</label>
+          <select id="f-when" name="when">
+            <option value="">Selecionar...</option>
+            <option>O quanto antes</option>
+            <option>Próximo mês</option>
+            <option>Próximos 3 meses</option>
+            <option>Só estou a explorar</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="f-msg"><span class="dot"></span>Conta-nos a tua ideia</label>
+          <textarea id="f-msg" name="message" placeholder="O que precisas? Quais os objetivos? Tens referências de sites de que gostes?" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <span class="form-note">↩ Resposta em 48h · zero compromisso</span>
+        <button type="submit" class="btn btn-dark">Enviar pedido →</button>
+      </div>
+    </form>
+
+    <div class="form-success reveal" id="formSuccess">
+      <div class="big">🎉</div>
+      <h3>Recebido!</h3>
+      <p>Voltamos a ti em 48h. Entretanto, segue-nos no Instagram.</p>
+    </div>
+
+    <div class="socials-row reveal" style="grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto">
+      <a href="https://www.instagram.com/creativethinking.pt/" class="social-pill" target="_blank" rel="noopener">
+        <div class="icon">IG</div>
+        <div class="meta">
+          <span class="t">Vê o nosso dia-a-dia</span>
+          <span class="h">@creativethinking.pt</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:60px">
+      <span class="sticker gold">Estúdio</span>
+      <h2 style="font-size:clamp(34px,5vw,60px);margin-top:18px;color:var(--cream)">Lisboa, Portugal</h2>
+      <p style="margin-top:14px;font-size:14px;font-weight:700;letter-spacing:.08em">Trabalhamos remoto com clientes em todo o país — e fora dele.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="brand">
+        <div class="logo">
+          <svg viewBox="0 0 100 100" width="44" height="44" aria-hidden="true">
+            <path d="M50 10C27.9 10 10 27.9 10 50s17.9 40 40 40c15.5 0 28.5-8.5 35-20L68 60c-4 6-10 10-18 10-11.1 0-20-8.9-20-20s8.9-20 20-20c8 0 14 4 18 10l17-10C98.5 18.5 65.5 10 50 10Z" fill="#F6EFD9"/>
+            <circle cx="50" cy="50" r="17" fill="#9EB4D3"/>
+            <polygon points="55,38 48,51 53,51 45,62 52,49 47,49" fill="#4E0000"/>
+          </svg>
+          <span class="logo-text">
+            <span class="row" style="color:var(--cream)">Creative <span style="color:var(--gold)">Thinking</span></span>
+            <span class="sub" style="color:var(--blue)">WEB DEVELOPMENT</span>
+          </span>
+        </div>
+        <p>Estúdio de web design &amp; desenvolvimento para marcas portuguesas com algo a dizer.</p>
+      </div>
+      <div><h4>Serviços</h4><a href="servicos.html">Landing Pages</a><a href="servicos.html">Websites</a><a href="servicos.html">E-commerce</a><a href="servicos.html">Branding</a></div>
+      <div><h4>Estúdio</h4><a href="sobre.html">Sobre</a><a href="faq.html">FAQ</a><a href="contacto.html">Contacto</a></div>
+      <div><h4>Social</h4><a href="https://www.instagram.com/creativethinking.pt/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Creative Thinking · Lisboa, PT</span>
+      <span>Feito com ♥ &amp; muito café</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!this.checkValidity()){
+      this.reportValidity();
+      return;
+    }
+    this.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    window.scrollTo({top: document.getElementById('formSuccess').offsetTop - 120, behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
