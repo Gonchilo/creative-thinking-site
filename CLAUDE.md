@@ -4,6 +4,14 @@
 
 Static HTML/CSS/JS site for Creative Thinking studio. No build pipeline. Edit files directly.
 
+## Hosting
+
+Cloudflare Workers & Pages. Deploy via Cloudflare — no server-side code.
+
+## Email sending
+
+Resend (https://resend.com) — transactional email (form submissions, etc).
+
 ## Key facts
 
 - **Owners:** Gonçalo (web dev) & Joana (marketing) — couple, founded 2025, based in Lisbon
