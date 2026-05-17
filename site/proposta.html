@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Serviços & Pacotes — Creative Thinking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #4E0000;
+    --gold: #7D7F2E;
+    --blue: #9EB4D3;
+    --cream: #F6EFD9;
+    --dark: #0f0000;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-weight: 500;
+    color: var(--red);
+    background: var(--cream);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.02em;
+    color: var(--red);
+    text-transform: uppercase;
+  }
+
+  .page {
+    max-width: 794px;
+    margin: 0 auto;
+    padding: 48px 48px 64px;
+    background: var(--cream);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .doc-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 3px solid var(--red);
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-text-block {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-name {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+  }
+
+  .logo-name .gold { color: var(--gold); }
+
+  .logo-sub {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--blue);
+    margin-top: 3px;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .header-right .label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .header-right .contact-line {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+
+  /* HERO BLOCK */
+  .doc-hero {
+    text-align: center;
+    padding: 32px 0 36px;
+    border-bottom: 3px solid var(--red);
+    margin-bottom: 40px;
+  }
+
+  .sticker {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--red);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: .06em;
+    border: 2px solid var(--red);
+    box-shadow: 3px 3px 0 var(--red);
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+  }
+
+  .sticker.gold {
+    background: var(--gold);
+    color: var(--cream);
+  }
+
+  .doc-hero h1 {
+    font-size: 52px;
+    margin-bottom: 12px;
+    line-height: .9;
+  }
+
+  .doc-hero h1 .pop { color: var(--gold); }
+
+  .doc-hero p {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--gold);
+    display: none;
+  }
+
+  /* PACKAGES GRID */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .pack-card {
+    border: 3px solid var(--red);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 5px 5px 0 var(--red);
+  }
+
+  .pack-card.featured {
+    box-shadow: 5px 5px 0 var(--gold);
+    border-color: var(--gold);
+  }
+
+  .pack-head {
+    background: var(--red);
+    color: var(--cream);
+    padding: 16px 18px 14px;
+  }
+
+  .pack-card.featured .pack-head {
+    background: var(--gold);
+  }
+
+  .pack-num {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    opacity: .7;
+    margin-bottom: 4px;
+  }
+
+  .pack-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--cream);
+    letter-spacing: -.01em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .pack-tagline {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    opacity: .85;
+    text-transform: uppercase;
+  }
+
+  .pack-body {
+    padding: 16px 18px;
+    background: var(--cream);
+  }
+
+  .pack-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: -.02em;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+
+  .pack-card.featured .pack-price { color: var(--gold); }
+
+  .pack-price .fixed-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    color: var(--red);
+    opacity: .6;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .pack-list {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+
+  .pack-list li {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(78,0,0,.12);
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .pack-list li:last-child { border-bottom: none; }
+
+  .pack-list li .icon { flex-shrink: 0; color: var(--gold); }
+
+  .pack-footer {
+    padding: 10px 18px;
+    background: rgba(78,0,0,.06);
+    border-top: 2px solid rgba(78,0,0,.12);
+  }
+
+  .pack-meta {
+    display: flex;
+    gap: 14px;
+  }
+
+  .pack-meta-item {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .08em;
+  }
+
+  .pack-meta-item span {
+    display: block;
+    opacity: .55;
+    font-weight: 700;
+    font-size: 8px;
+    letter-spacing: .1em;
+    margin-bottom: 1px;
+  }
+
+  /* NOT INCLUDED BLOCK */
+  .not-included {
+    background: rgba(78,0,0,.05);
+    border: 2px solid rgba(78,0,0,.15);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .not-included-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: var(--red);
+    opacity: .6;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  .not-included-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    opacity: .7;
+  }
+
+  /* ADDONS */
+  .addons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .addon-card {
+    border: 2px solid var(--red);
+    border-radius: 4px;
+    padding: 14px 16px;
+    box-shadow: 3px 3px 0 var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .addon-name {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    margin-bottom: 3px;
+  }
+
+  .addon-desc {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    opacity: .65;
+  }
+
+  .addon-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--gold);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* MAINTENANCE */
+  .manut-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    border: 3px solid var(--red);
+    box-shadow: 5px 5px 0 var(--red);
+  }
+
+  .manut-table th {
+    background: var(--red);
+    color: var(--cream);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .manut-table td {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 10px 14px;
+    border-bottom: 2px solid rgba(78,0,0,.12);
+  }
+
+  .manut-table tr:last-child td { border-bottom: none; }
+  .manut-table tr:nth-child(even) td { background: rgba(78,0,0,.04); }
+
+  .manut-table .price-cell {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* SEO INCLUDED */
+  .seo-block {
+    background: var(--red);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 5px 5px 0 var(--gold);
+  }
+
+  .seo-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .seo-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .seo-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .seo-tag {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+  }
+
+  /* CUSTOM */
+  .custom-block {
+    border: 3px solid var(--blue);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+    box-shadow: 5px 5px 0 var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .custom-block h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .custom-block p {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    opacity: .7;
+    text-transform: uppercase;
+  }
+
+  .custom-block .cta-tag {
+    background: var(--blue);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 2px solid var(--red);
+    box-shadow: 3px 3px 0 var(--red);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    border-top: 3px solid var(--red);
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .doc-footer .left {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    opacity: .65;
+  }
+
+  .doc-footer .contacts {
+    display: flex;
+    gap: 20px;
+  }
+
+  .doc-footer .contact-item {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-align: right;
+  }
+
+  .doc-footer .contact-item span {
+    display: block;
+    opacity: .5;
+    font-weight: 700;
+    font-size: 8px;
+    letter-spacing: .1em;
+    margin-bottom: 1px;
+  }
+
+  /* DIVIDER */
+  .stripes {
+    height: 12px;
+    background: repeating-linear-gradient(90deg, var(--blue) 0 12px, var(--red) 12px 24px);
+    margin: 28px 0;
+    border-radius: 2px;
+  }
+
+  /* PRINT */
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      background: var(--cream);
+    }
+
+    .page {
+      max-width: 100%;
+      padding: 36px 44px 52px;
+      min-height: auto;
+    }
+
+    .pack-card,
+    .addon-card,
+    .manut-table,
+    .seo-block,
+    .custom-block {
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="logo-block">
+      <svg viewBox="0 0 100 100" width="44" height="44" aria-hidden="true">
+        <path d="M50 10C27.9 10 10 27.9 10 50s17.9 40 40 40c15.5 0 28.5-8.5 35-20L68 60c-4 6-10 10-18 10-11.1 0-20-8.9-20-20s8.9-20 20-20c8 0 14 4 18 10l17-10C98.5 18.5 65.5 10 50 10Z" fill="#4E0000"/>
+        <circle cx="50" cy="50" r="17" fill="#9EB4D3"/>
+        <polygon points="55,38 48,51 53,51 45,62 52,49 47,49" fill="#FFFFFF"/>
+      </svg>
+      <div class="logo-text-block">
+        <div class="logo-name">Creative <span class="gold">Thinking</span></div>
+        <div class="logo-sub">Web Development</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="label">Contactos</div>
+      <div class="contact-line">joana@creativethinking.pt</div>
+      <div class="contact-line">+351 913 306 609</div>
+      <div class="contact-line">creativethinking.pt</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="doc-hero">
+    <div class="sticker">Serviços & Pacotes 2025</div>
+    <h1>Preços claros,<br>resultados <span class="pop">reais</span>.</h1>
+    <p>Tudo o que precisas para ter presença online — sem surpresas, sem letras pequenas.</p>
+  </div>
+
+  <!-- MAIN PACKAGES -->
+  <div class="section-title">01 — Pacotes Principais</div>
+
+  <div class="packages-grid">
+
+    <!-- Landing Page -->
+    <div class="pack-card">
+      <div class="pack-head">
+        <div class="pack-num">Pacote 01</div>
+        <div class="pack-name">Landing Page</div>
+        <div class="pack-tagline">1 página · 1 objetivo</div>
+      </div>
+      <div class="pack-body">
+        <div class="pack-price">
+          <span class="fixed-label">Preço fixo</span>
+          690€
+        </div>
+        <ul class="pack-list">
+          <li><span class="icon">✦</span>1 página completa</li>
+          <li><span class="icon">✦</span>Design exclusivo</li>
+          <li><span class="icon">✦</span>SEO completo incluído</li>
+          <li><span class="icon">✦</span>Mobile-first</li>
+          <li><span class="icon">✦</span>2 rondas de revisão</li>
+          <li><span class="icon">✦</span>Formulário de contacto</li>
+          <li><span class="icon">✦</span>Integração Instagram</li>
+        </ul>
+      </div>
+      <div class="pack-footer">
+        <div class="pack-meta">
+          <div class="pack-meta-item"><span>Prazo</span>2 semanas</div>
+          <div class="pack-meta-item"><span>Revisões</span>2 rondas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini-site -->
+    <div class="pack-card featured">
+      <div class="pack-head">
+        <div class="pack-num">Pacote 02 · Mais popular</div>
+        <div class="pack-name">Mini-site</div>
+        <div class="pack-tagline">Até 3 páginas · Presença completa</div>
+      </div>
+      <div class="pack-body">
+        <div class="pack-price">
+          <span class="fixed-label">Preço fixo</span>
+          990€
+        </div>
+        <ul class="pack-list">
+          <li><span class="icon">✦</span>Até 3 páginas</li>
+          <li><span class="icon">✦</span>Design exclusivo</li>
+          <li><span class="icon">✦</span>SEO completo incluído</li>
+          <li><span class="icon">✦</span>Mobile-first</li>
+          <li><span class="icon">✦</span>2 rondas de revisão</li>
+          <li><span class="icon">✦</span>Formulário de contacto</li>
+          <li><span class="icon">✦</span>Integração redes sociais</li>
+        </ul>
+      </div>
+      <div class="pack-footer">
+        <div class="pack-meta">
+          <div class="pack-meta-item"><span>Prazo</span>2–3 semanas</div>
+          <div class="pack-meta-item"><span>Revisões</span>2 rondas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Completo -->
+    <div class="pack-card">
+      <div class="pack-head">
+        <div class="pack-num">Pacote 03</div>
+        <div class="pack-name">Site Completo</div>
+        <div class="pack-tagline">Até 5 páginas · Tudo incluído</div>
+      </div>
+      <div class="pack-body">
+        <div class="pack-price">
+          <span class="fixed-label">Preço fixo</span>
+          1.490€
+        </div>
+        <ul class="pack-list">
+          <li><span class="icon">✦</span>Até 5 páginas</li>
+          <li><span class="icon">✦</span>Design exclusivo</li>
+          <li><span class="icon">✦</span>SEO completo incluído</li>
+          <li><span class="icon">✦</span>Mobile-first</li>
+          <li><span class="icon">✦</span>3 rondas de revisão</li>
+          <li><span class="icon">✦</span>Formulário de contacto</li>
+          <li><span class="icon">✦</span>Integração redes sociais</li>
+        </ul>
+      </div>
+      <div class="pack-footer">
+        <div class="pack-meta">
+          <div class="pack-meta-item"><span>Prazo</span>4 semanas</div>
+          <div class="pack-meta-item"><span>Revisões</span>3 rondas</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOT INCLUDED -->
+  <div class="not-included">
+    <div class="not-included-label">Não inclui</div>
+    <div class="not-included-items">
+      <span class="tag">Textos / Copywriting</span>
+      <span class="tag">Fotografias</span>
+      <span class="tag">Domínio</span>
+      <span class="tag">Alojamento (Hosting)</span>
+      <span class="tag">Traduções</span>
+    </div>
+  </div>
+
+  <!-- SEO INCLUDED -->
+  <div class="seo-block">
+    <div>
+      <div class="seo-label">Incluído em todos os projetos</div>
+      <div class="seo-title">SEO desde o primeiro dia</div>
+      <div class="seo-items">
+        <span class="seo-tag">Meta tags únicas</span>
+        <span class="seo-tag">Open Graph</span>
+        <span class="seo-tag">Schema.org</span>
+        <span class="seo-tag">Sitemap + robots.txt</span>
+        <span class="seo-tag">Canonical tags</span>
+        <span class="seo-tag">Mobile-first</span>
+        <span class="seo-tag">Carregamento rápido</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stripes"></div>
+
+  <!-- ADD-ONS -->
+  <div class="section-title">02 — Extras & Add-ons</div>
+
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div>
+        <div class="addon-name">Área de Administrador</div>
+        <div class="addon-desc">CMS para editar conteúdos sem código</div>
+      </div>
+      <div class="addon-price">+400€</div>
+    </div>
+    <div class="addon-card">
+      <div>
+        <div class="addon-name">Fotografia Profissional</div>
+        <div class="addon-desc">Parceiro fotógrafo — sessão e edição</div>
+      </div>
+      <div class="addon-price">Consulta</div>
+    </div>
+    <div class="addon-card">
+      <div>
+        <div class="addon-name">Design & Branding</div>
+        <div class="addon-desc">Identidade visual com parceiro designer</div>
+      </div>
+      <div class="addon-price">Consulta</div>
+    </div>
+    <div class="addon-card">
+      <div>
+        <div class="addon-name">Filmagem & Vídeo</div>
+        <div class="addon-desc">Parceiro de produção audiovisual</div>
+      </div>
+      <div class="addon-price">Consulta</div>
+    </div>
+  </div>
+
+  <!-- MAINTENANCE -->
+  <div class="section-title">03 — Manutenção Mensal</div>
+
+  <table class="manut-table">
+    <thead>
+      <tr>
+        <th>Pack</th>
+        <th>O que inclui</th>
+        <th>Horas/mês</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Básico</strong></td>
+        <td>Gestão de hosting + emails</td>
+        <td>—</td>
+        <td class="price-cell">19€/mês</td>
+      </tr>
+      <tr>
+        <td><strong>Essencial</strong></td>
+        <td>Hosting + emails + alterações (~3 atualizações)</td>
+        <td>1h</td>
+        <td class="price-cell">49€/mês</td>
+      </tr>
+      <tr>
+        <td><strong>Conforto</strong></td>
+        <td>Hosting + emails + alterações (~6 atualizações)</td>
+        <td>2h</td>
+        <td class="price-cell">79€/mês</td>
+      </tr>
+      <tr>
+        <td><strong>Por pedido</strong></td>
+        <td>Sem contrato mensal — faturação por hora</td>
+        <td>Flexível</td>
+        <td class="price-cell">60€/hora</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CUSTOM -->
+  <div class="custom-block">
+    <div>
+      <h3>Projeto à Medida</h3>
+      <p>Funcionalidades avançadas, integrações, plataformas complexas — orçamento personalizado sem compromisso.</p>
+    </div>
+    <div class="cta-tag">Orçamento grátis</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="left">© 2025 Creative Thinking · Setúbal, Portugal · creativethinking.pt</div>
+    <div class="contacts">
+      <div class="contact-item">
+        <span>Email</span>
+        joana@creativethinking.pt
+      </div>
+      <div class="contact-item">
+        <span>WhatsApp</span>
+        +351 913 306 609
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
