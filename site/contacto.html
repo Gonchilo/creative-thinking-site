@@ -192,15 +192,44 @@
 
 <script src="script.js"></script>
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  document.getElementById('contactForm').addEventListener('submit', async function(e){
     e.preventDefault();
     if(!this.checkValidity()){
       this.reportValidity();
       return;
     }
-    this.style.display = 'none';
-    document.getElementById('formSuccess').classList.add('show');
-    window.scrollTo({top: document.getElementById('formSuccess').offsetTop - 120, behavior:'smooth'});
+
+    const btn = this.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'A enviar...';
+
+    const fd = new FormData(this);
+    const data = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      company: fd.get('company'),
+      phone: fd.get('phone'),
+      project: fd.get('project'),
+      budget: fd.get('budget'),
+      when: fd.get('when'),
+      message: fd.get('message'),
+    };
+
+    try {
+      const res = await fetch('/api/orcamento', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Server error');
+      this.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+      window.scrollTo({top: document.getElementById('formSuccess').offsetTop - 120, behavior:'smooth'});
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Enviar pedido →';
+      alert('Erro ao enviar. Tenta novamente ou envia email para joana@creativethinking.pt');
+    }
   });
 </script>
 </body>
